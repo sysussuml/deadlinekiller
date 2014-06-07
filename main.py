@@ -31,6 +31,7 @@ class LoginHandler(BaseHandler):
             student = coll.find_one({"number":username})
             if student:
                 student["cookie"] = cookie
+                coll.save(student)
             else:
                 coll.insert({"number":username,"cookie":cookie})
             self.redirect("/")

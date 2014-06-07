@@ -8,7 +8,7 @@
   <script src="{{static_url('js/index.js')}}"></script>
   <title>DeadLine Killer</title>
 </head>
-<body onload="onload()">
+<body>
   <div id="wrapper">
     <div id="header">
     <img src="{{static_url('images/header-bkg.png')}}">
@@ -43,8 +43,8 @@
               <button type="submit" form="nameform" class="delete" value="delete+{{key}}" name="delete">delete</button>
             </div>
             <div class="clear"></div>
-            <div class="bar" id="bar{{key}}">
-            <img src="{{static_url('images/color2.png')}}" class="colored">
+            <div class="bar" id="bar{{key}}" onmouseover="showCompleted(this)">
+              <img src="{{static_url('images/color2.png')}}" class="colored">
             </div>
             <div class="date">
               <div class="start" id="start">
@@ -60,12 +60,15 @@
         <div id="newtask">
           <button type="button" id="add" class="add" onclick="showbox()">新建任务</button>
           <div class="hide">
-            <form class="form" method="post" action="">
+            <form class="form" method="post" action="" id="form">
               <textarea name="newtask" class="taskname" placeholder="新任务"></textarea>
-              截至时间
+              <!--<p><span>起始时间：</span>
+                <input name="starttime" type="date" class="time" value="2014-12-12">
+              </p>-->
+              截至时间：
               <input name="endtime" type="date" class="time" value="2014-12-12">
               <br/>
-              <input type="submit" name="succeed" class="succeed" onclick="succeed()" value="创建">
+              <input type="submit" name="succeed" class="succeed" onmouseover="checkEndDate()" onclick="succeed()" value="创建">
               <a href="javascript:;" onclick="failed()" class="failed">取消</a>
             </form>
           </div>

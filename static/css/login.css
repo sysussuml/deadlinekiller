@@ -1,6 +1,7 @@
 body {
-   background: url(../images/bg.png);
+   background: url(../images/body-bkg.png);
    background-size: 100% 100%;
+   /*background-color:#e9d8cd;*/
    margin:0;
    padding:0;
 }
@@ -17,20 +18,22 @@ body {
     margin:120px auto 0;
     padding-top:73px;
     position:relative;
-    background-color:#ccc;
-    box-shadow:0 3px 3px rgba(21,62,78,0.8);
+    background: url(../images/body-bkg.png);
+    background-size: 100% 100%;
+    /*background-color:#e9d8cd;
+    box-shadow:0 3px 3px rgba(21,62,78,0.8);*/
 }
 
 .login-form:before {
     content:"";
     position:absolute;
     top:-50px;
-    left:150px;
-    width:123px;
-    height:101px;
-    /*padding:2px;*/
-    border:1px solid rgb(216,216,219);
-    background:#fff url("../images/logo1.png");
+    left:30px;
+    width:345px;
+    height:99px;
+    /*padding:2px;
+    border:1px solid rgb(216,216,219);*/
+    background:/*#e9d8cd*/ url("../images/logo.png");
 }
 
 
@@ -39,7 +42,7 @@ body {
     color:rgb(153,153,153);
     font-weight:bold;
 	font-size:13px;
-    top:calc(100% + 20px);
+    top:calc(100% + 100px);
     background-color:rgb(255,255,255);
     width:400px;
     height:46px;

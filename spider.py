@@ -108,8 +108,10 @@ def get_info(cookie):
         return False, "Error"
     else:
         xm=[]
-        xm.append(data[data.find('"xm":"')+6:data.find('","xmpy":')])
-        xm.append(data[data.find('","bjmc":')+10:data.find('","xyh":')])
+        #xm.append(data[data.find('"xm":"')+6:data.find('","xmpy":')])
+        #xm.append(data[data.find('","bjmc":')+10:data.find('","xyh":')])
+        rest = data[data.find('"xm":"')+6:-1]
+        xm.append(rest[0:rest.find('","')])
         return True ,xm
 
 
